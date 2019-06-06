@@ -1,17 +1,9 @@
-//
-//  ViewController.swift
-//  Procastination Killer
-//
-//  Created by Deepson on 5/13/19.
-//  Copyright © 2019 Deepson. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
     var num = 30
     var timer=Timer();
-    let interval = 1.0
+    let interval = 2.0
     @IBOutlet weak var lblSlider: UISlider!
     @IBOutlet weak var lblDisplay: UILabel!
     @IBOutlet weak var lblStepper: UIStepper!
@@ -23,7 +15,7 @@ class ViewController: UIViewController {
     @objc func updateTime(){
         if num>=0{
         lblDisplay.text=String(num)+" Seconds"
-       num-=1
+       num-=2
         }
     }
     func RunTimer(){
@@ -50,6 +42,7 @@ class ViewController: UIViewController {
     @IBAction func btnStop(_ sender: Any) {
         num=0
          lblDisplay.text=String(num)+" Seconds"
+        //to stop the code
         timer.invalidate()
     }
 }
